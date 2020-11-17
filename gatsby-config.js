@@ -2,9 +2,9 @@ import { join } from 'path';
 
 export default {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: 'LMS 4 JS&TS',
+    description: 'Gatsby + TypeScript + Material-UIで構築',
+    author: '@tsuyopon_xyz',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -36,8 +36,6 @@ export default {
       },
     },
     `gatsby-plugin-typegen`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-material-ui`,
   ],
 };
