@@ -1,16 +1,10 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import Grid, { GridSpacing } from '@material-ui/core/Grid';
+import Grid from '@material-ui/core/Grid';
 import ProductCard from 'src/components/ProductCard';
 
 const useStyles = makeStyles((theme: Theme) => {
-  console.log("theme.breakpoints.up('sm') : ", theme.breakpoints.up('sm'));
-  console.log("theme.breakpoints.down('sm') : ", theme.breakpoints.down('sm'));
-  console.log("theme.breakpoints.up('md') : ", theme.breakpoints.up('md'));
-  console.log("theme.breakpoints.down('md') : ", theme.breakpoints.down('md'));
-  console.log("theme.breakpoints.up('lg') : ", theme.breakpoints.up('lg'));
-  console.log("theme.breakpoints.down('lg') : ", theme.breakpoints.down('lg'));
-
   return createStyles({
     root: {
       flexGrow: 1,
@@ -44,7 +38,9 @@ const ProductList: React.FC<Props> = ({ products }) => {
 
         return (
           <Grid key={product.id} item className={classes.card}>
-            <ProductCard imageUrl={imageUrl} title={title} />
+            <Link to={`/product/${product.handle}`}>
+              <ProductCard imageUrl={imageUrl} title={title} />
+            </Link>
           </Grid>
         );
       })}

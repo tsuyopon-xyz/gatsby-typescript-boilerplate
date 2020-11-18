@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface Props {
-  data: GatsbyTypes.usersTsuyoshiDocumentsjavascriptpracticegatsbygatsbyTypscriptSamplesrcpagesproductsTsx3776209724Query;
+  data: GatsbyTypes.usersTsuyoshiDocumentsjavascriptpracticegatsbygatsbyTypscriptSamplesrcpagesproductsTsx3708707325Query;
 }
 
 const ProductsPage: React.FC<Props> = ({ data }) => {
@@ -55,6 +55,7 @@ export const query = graphql`
         node {
           id
           title
+          handle
           images {
             originalSrc
           }
@@ -71,64 +72,6 @@ export const query = graphql`
               currencyCode
             }
           }
-        }
-      }
-    }
-
-    shopifyShop {
-      description
-      name
-    }
-
-    allShopifyCollection(limit: 10000) {
-      totalCount
-      edges {
-        node {
-          title
-          handle
-          products {
-            id
-            title
-            descriptionHtml
-            createdAt
-            priceRange {
-              maxVariantPrice {
-                amount
-                currencyCode
-              }
-              minVariantPrice {
-                amount
-                currencyCode
-              }
-            }
-          }
-        }
-      }
-    }
-
-    allShopifyShopPolicy {
-      totalCount
-      edges {
-        node {
-          title
-          handle
-          body
-          url
-        }
-      }
-    }
-
-    allShopifyArticle(sort: { fields: [publishedAt], order: DESC }) {
-      totalCount
-      nodes {
-        id
-        excerpt
-        contentHtml
-        publishedAt
-        author {
-          lastName
-          firstName
-          name
         }
       }
     }
