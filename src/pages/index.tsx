@@ -13,6 +13,7 @@ const IndexPage: React.FC = () => (
       <Image />
     </div>
     <Link to="/page-2/">Go to page 2</Link> <br />
+    <Link to="/products/">Go to products</Link> <br />
   </>
 );
 

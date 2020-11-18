@@ -1,4 +1,9 @@
 import { join } from 'path';
+import dotEnv from 'dotenv';
+
+dotEnv.config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 export default {
   siteMetadata: {
@@ -37,5 +42,13 @@ export default {
     },
     `gatsby-plugin-typegen`,
     `gatsby-plugin-material-ui`,
+    {
+      resolve: 'gatsby-source-shopify',
+      options: {
+        shopName: process.env.SHOPIFY_SHOP_NAME,
+        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+        apiVersion: '2020-10',
+      },
+    },
   ],
 };
